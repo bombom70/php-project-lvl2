@@ -1,0 +1,31 @@
+{
+    "name": "hexlet/code",
+    "description": "console util",
+    "authors": [
+        {
+            "name": "nik",
+            "email": "khamdamov_1996@mail.ru"
+        }
+    ],
+    "scripts": {
+        "phpcs": "phpcs",
+        "test": "phpunit tests"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "files": [
+            "src/genDiff.php"
+        ]
+    },
+    "bin": [
+        "bin/gendiff"
+    ],
+    "require": {
+        "docopt/docopt": "^1.0",
+        "wp-cli/php-cli-tools": "^0.11.11",
+        "funct/funct": "^1.5"
+    }
+}
