@@ -45,7 +45,6 @@ function buildTree(array $keys, object $objBefore, object $objAfter): array
     }, $keys);
     return $tree;
 }
-
 function builder(object $objBefore, object $objAfter): array
 {
     $unicKey = union(array_keys(get_object_vars($objBefore)), array_keys(get_object_vars($objAfter)));
@@ -53,6 +52,5 @@ function builder(object $objBefore, object $objAfter): array
         return $key;
     }));
     $tree = buildTree($sortedUnicKey, $objBefore, $objAfter);
-    
     return $tree;
 }

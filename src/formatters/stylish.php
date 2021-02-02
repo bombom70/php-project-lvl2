@@ -29,7 +29,7 @@ function stylish(array $tree, int $depth = 0): string
         }
         return $result;
     }, $tree);
-        return implode("\n", addBrackets($stylishData, $indent));
+    return implode("\n", addBrackets($stylishData, $indent));
 }
 function stringify($data, int $depth): string
 {
