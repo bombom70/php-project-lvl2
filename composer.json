@@ -9,6 +9,7 @@
     ],
     "scripts": {
         "phpcs": "phpcs",
+        "phpcbf": "phpcbf",
         "test": "phpunit tests"
     },
     "require-dev": {
@@ -18,7 +19,12 @@
     "autoload": {
         "files": [
             "src/genDiff.php",
-            "src/parser.php"
+            "src/parser.php",
+            "src/build.php",
+            "src/formatters.php",
+            "src/formatters/stylish.php",
+            "src/formatters/plain.php",
+            "src/formatters/json.php"
         ]
     },
     "bin": [
