@@ -5,12 +5,8 @@ namespace Differ\Builder;
 use function Funct\Collection\union;
 use function Funct\Collection\sortBy;
 
-function builder(object $objBefore, object $objAfter): array
+function buildTree(array $keys, object $objBefore, object $objAfter): array
 {
-    $unicKey = union(array_keys(get_object_vars($objBefore)), array_keys(get_object_vars($objAfter)));
-    $sortedUnicKey = array_values(sortBy($unicKey, function ($key) {
-        return $key;
-    }));
     $tree = array_map(function ($key) use ($objBefore, $objAfter) {
         if (! property_exists($objAfter, $key)) {
             return [
@@ -46,6 +42,17 @@ function builder(object $objBefore, object $objAfter): array
                 'type' => 'unchanged',
                 'value' => $objBefore->$key
             ];
-    }, $sortedUnicKey);
+    }, $keys);
+    return $tree;
+}
+
+function builder(object $objBefore, object $objAfter): array
+{
+    $unicKey = union(array_keys(get_object_vars($objBefore)), array_keys(get_object_vars($objAfter)));
+    $sortedUnicKey = array_values(sortBy($unicKey, function ($key) {
+        return $key;
+    }));
+    $tree = buildTree($sortedUnicKey, $objBefore, $objAfter);
+    
     return $tree;
 }
