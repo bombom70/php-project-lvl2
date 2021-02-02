@@ -5,7 +5,6 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/aea6b14c2cca20eca20c/test_coverage)](https://codeclimate.com/github/bombom70/php-project-lvl2/test_coverage)
 
-15648077d5c7a8739eb8ea55a0edc0ad979e614621313cf7ed91aad5b3a33f51
 
 #### json different:
 run:

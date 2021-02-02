@@ -1,0 +1,7 @@
+language: php
+
+script:
+  - make lint
+  - make test
+notifications:
+  email: false
