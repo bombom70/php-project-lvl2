@@ -15,3 +15,6 @@ fix:
 
 test:
 	composer run-script test tests/GendiffTest.php
+
+test-coverage:
+	composer phpunit tests -- --coverage-clover build/logs/clover.xml
